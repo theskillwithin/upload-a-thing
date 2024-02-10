@@ -30,6 +30,13 @@ export default function Home() {
           alert(`ERROR! ${error.message}`);
         }}
       />
+
+      <a
+        href="https://github.com/theskillwithin/upload-a-thing"
+        className="mt-8 hover:text-blue-700 text-blue-500"
+      >
+        https://github.com/theskillwithin/upload-a-thing
+      </a>
     </main>
   );
 }
