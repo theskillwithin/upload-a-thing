@@ -2,7 +2,10 @@
 
 import { UploadButton, UploadDropzone } from "@/src/utils/uploadthing";
 
+import { useRouter } from "next/navigation";
+
 export default function Home() {
+  const router = useRouter();
   return (
     <main className="flex min-h-screen flex-col items-center p-24">
       {/* <UploadButton
@@ -21,9 +24,8 @@ export default function Home() {
       <UploadDropzone
         endpoint="imageUploader"
         onClientUploadComplete={(res) => {
-          // Do something with the response
-          console.log("Files: ", res);
-          alert("Upload Completed");
+          // go to the page with the uploaded file
+          router.push(`/file/${res[0].key}`);
         }}
         onUploadError={(error: Error) => {
           // Do something with the error.
