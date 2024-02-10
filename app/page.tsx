@@ -13,7 +13,7 @@ export default function Home() {
         onClientUploadComplete={(res) => {
           // Do something with the response
           console.log("Files: ", res);
-          alert("Upload Completed");
+          alert("Upload Completed");x
         }}
         onUploadError={(error: Error) => {
           // Do something with the error.
@@ -24,11 +24,9 @@ export default function Home() {
       <UploadDropzone
         endpoint="imageUploader"
         onClientUploadComplete={(res) => {
-          // go to the page with the uploaded file
-          router.push(`/file/${res[0].key}`);
+          router.push(`/${res[0].key}`);
         }}
         onUploadError={(error: Error) => {
-          // Do something with the error.
           alert(`ERROR! ${error.message}`);
         }}
       />
